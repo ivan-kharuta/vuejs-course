@@ -1,19 +1,28 @@
 <template>
   <div id="app">
     <MainHeader />
-    <MainContainer />
+    <main class="main-container">
+      <FilterBar />
+      <MovieList />
+    </main>
   </div>
 </template>
 
 <script>
 import MainHeader from "./components/MainHeader.vue";
-import MainContainer from "./components/MainContainer.vue";
+import FilterBar from "./components/FilterBar.vue";
+import MovieList from "./components/MovieList.vue";
 
 export default {
-  name: "app",
+  data() {
+    return {
+      name: "app"
+    };
+  },
   components: {
     MainHeader,
-    MainContainer
+    FilterBar,
+    MovieList
   }
 };
 </script>
@@ -21,6 +30,7 @@ export default {
 <style lang="scss">
 body {
   margin: 0;
+  font-family: sans-serif;
 }
 
 #app {
